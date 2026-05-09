@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Profile — BASE82</title>
+    <link rel="icon" type="image/png" href="../asserts/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/pages.css">
+    <link rel="stylesheet" href="../CSS/dev-profile.css">
+    <link rel="stylesheet" href="../CSS/theme-switcher.css">
+</head>
+
+<body>
+
+    <header class="top-nav">
+        <a href="home.html" class="nav-brand">
+            <img src="../asserts/logo.png" alt="BASE82">
+            <span>BASE82</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+            <li><a href="about.html" class="active">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </header>
+
+    <!-- Back button — sits just below the fixed nav -->
+    <div class="back-btn-bar">
+        <a href="about.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> BACK
+        </a>
+    </div>
+
+    <!-- Plain dark hero — no scanner, no grid, no streaks -->
+    <div class="profile-hero">
+        <div class="profile-hero-overlay"></div>
+    </div>
+
+    <div class="profile-card-float">
+        <div class="profile-main-card">
+            <div class="profile-index-badge"><span id="devIndex">01</span></div>
+
+            <div class="profile-avatar-col">
+                <div class="profile-avatar-wrap">
+                    <div class="profile-avatar-ring r1"></div>
+                    <div class="profile-avatar-ring r2"></div>
+                    <img id="devAvatar" src="" alt="" class="profile-avatar">
+                    <div class="profile-avatar-fallback" id="devAvatarFallback"></div>
+                </div>
+                <div class="profile-status">
+                    <div class="profile-status-dot"></div>
+                    ONLINE
+                </div>
+            </div>
+
+            <div class="profile-info-col">
+                <div class="profile-eyebrow">// OPERATOR PROFILE</div>
+                <h1 class="profile-name" id="devName"></h1>
+                <div class="profile-role" id="devRole"></div>
+                <p class="profile-bio" id="devBio"></p>
+                <div class="profile-contributed">
+                    <div class="profile-contributed-label">// CONTRIBUTED TO</div>
+                    <div class="profile-tags" id="devTags"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="socials-section">
+        <div class="socials-header">// CONNECT</div>
+        <div class="socials-grid" id="socialsGrid"></div>
+    </div>
+
+    <div class="profile-details-section">
+        <div class="socials-header">// ABOUT</div>
+        <div class="profile-details-grid" id="detailsGrid"></div>
+    </div>
+
+    <div id="customToast" class="custom-toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="../JS/theme-switcher.js"></script>
+    <script src="../JS/dev-profile.js"></script>
+</body>
+
+</html>
