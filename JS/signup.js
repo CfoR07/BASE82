@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const termsBox = document.getElementById("termsBox").checked;
             const usernameRegex = /^[a-zA-Z0-9_]{3,16}$/;
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+            const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*_-]).{8,}$/;
 
             if (!username || !email || !password || !confirmPassword) {
                 showToast("Please fill in all fields.");
