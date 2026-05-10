@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const body   = document.body;
-    const lanes  = document.querySelectorAll(".lane");
+    const body = document.body;
+    const lanes = document.querySelectorAll(".lane");
     const tracks = document.querySelectorAll(".track");
 
     // ── BACKGROUND FADE IN & SCROLL ──
@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     setTimeout(() => {
-        lanes.forEach(l  => l.classList.add("visible"));
+        lanes.forEach(l => l.classList.add("visible"));
         tracks.forEach(t => t.classList.add("running"));
     }, 100);
 
     // ── PASSWORD VISIBILITY TOGGLE ──
-    const passInput  = document.getElementById('password');
+    const passInput = document.getElementById('password');
     const toggleBtn1 = document.getElementById('togglePassword1');
 
     if (toggleBtn1 && passInput) {
@@ -31,14 +31,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (signupBtn) {
         signupBtn.addEventListener('click', () => {
-            const username        = document.getElementById("username").value.trim();
-            const email           = document.getElementById("email").value.trim();
-            const password        = document.getElementById("password").value.trim();
+            const username = document.getElementById("username").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
             const confirmPassword = document.getElementById("confirmPassword").value.trim();
-            const termsBox        = document.getElementById("termsBox").checked;
+            const termsBox = document.getElementById("termsBox").checked;
+            const usernameRegex = /^[a-zA-Z0-9_]{3,16}$/;
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
 
             if (!username || !email || !password || !confirmPassword) {
                 showToast("Please fill in all fields.");
+                return;
+            }
+
+
+            if (!usernameRegex.test(username)) {
+                showToast("Username must be 3–16 characters (letters, numbers, underscores).");
+                return;
+            }
+
+            if (!emailRegex.test(email)) {
+                showToast("Please enter a valid email address.");
+                return;
+            }
+
+            if (!passRegex.test(password)) {
+                showToast("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
                 return;
             }
 
@@ -70,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ── CUSTOM TOAST LOGIC ──
 window.showToast = function (message) {
-    const toast    = document.getElementById('customToast');
+    const toast = document.getElementById('customToast');
     const toastMsg = document.getElementById('toastMessage');
 
     if (toast && toastMsg) {
