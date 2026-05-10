@@ -10,13 +10,15 @@
 
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+    box-sizing: border-box;
+}
 
 :root {
-    --accent-primary:   #e8a045;
-    --accent-warm:      #f0b866;
-    --accent-dim:       #c07828;
-    --text-muted:       rgba(138, 155, 176, 0.5);
+    --accent-primary: #e8a045;
+    --accent-warm: #f0b866;
+    --accent-dim: #c07828;
+    --text-muted: rgba(138, 155, 176, 0.5);
 }
 
 body {
@@ -34,9 +36,7 @@ body::after {
     content: "";
     position: fixed;
     inset: 0;
-    background: radial-gradient(ellipse at center,
-            rgba(0, 0, 0, 0) 25%,
-            rgba(5, 7, 12, 0.88) 100%);
+    background: #00000000;
     pointer-events: none;
     z-index: 2;
 }
@@ -55,11 +55,24 @@ body::after {
     transition: opacity 1s ease;
 }
 
-.lane1 { top: -25%; transition-delay: 0.10s; }
-.lane2 { top: 40%;  transition-delay: 0.25s; }
-.lane3 { top: 100%; transition-delay: 0.40s; }
+.lane1 {
+    top: -25%;
+    transition-delay: 0.10s;
+}
 
-.lane.visible { opacity: 0.25; }
+.lane2 {
+    top: 40%;
+    transition-delay: 0.25s;
+}
+
+.lane3 {
+    top: 100%;
+    transition-delay: 0.40s;
+}
+
+.lane.visible {
+    opacity: 0.25;
+}
 
 .track {
     display: flex;
@@ -69,18 +82,37 @@ body::after {
     animation-play-state: paused;
 }
 
-.track.reverse { animation: scrollReverse 55s linear infinite; animation-play-state: paused; }
-.track.running { animation-play-state: running; }
-.track.reverse.running { animation-play-state: running; }
+.track.reverse {
+    animation: scrollReverse 55s linear infinite;
+    animation-play-state: paused;
+}
+
+.track.running {
+    animation-play-state: running;
+}
+
+.track.reverse.running {
+    animation-play-state: running;
+}
 
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 @keyframes scrollReverse {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .track img {
@@ -92,7 +124,9 @@ body::after {
     transition: transform 0.4s ease;
 }
 
-.track img:hover { transform: scale(1.07); }
+.track img:hover {
+    transform: scale(1.07);
+}
 
 /* ── LOGIN CARD ── */
 .loginCard {
@@ -120,20 +154,32 @@ body::after {
 }
 
 @keyframes cardIn {
-    0% { opacity: 0; top: 53%; }
-    100% { opacity: 1; top: 50%; }
+    0% {
+        opacity: 0;
+        top: 53%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 50%;
+    }
 }
 
 /* ── FORM ── */
-.logoWrapper { margin-bottom: 30px; }
+.logoWrapper {
+    margin-bottom: 30px;
+}
 
 .logoImg {
     width: 60px;
-    image-rendering: pixelated;
     filter: none !important;
 }
 
-.inputGroup { display: flex; flex-direction: column; gap: 12px; }
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
 .inputBox {
     background: #080b10;
@@ -178,7 +224,9 @@ body::after {
     transition: color 0.2s;
 }
 
-.togglePassword:hover { color: var(--accent-primary); }
+.togglePassword:hover {
+    color: var(--accent-primary);
+}
 
 /* ── OPTIONS ── */
 .options {
@@ -200,7 +248,8 @@ body::after {
 
 .rememberBox input[type="checkbox"] {
     accent-color: var(--accent-primary);
-    width: 13px; height: 13px;
+    width: 13px;
+    height: 13px;
     cursor: pointer;
 }
 
@@ -210,7 +259,9 @@ body::after {
     transition: color 0.2s;
 }
 
-.links a:hover { color: var(--accent-primary); }
+.links a:hover {
+    color: var(--accent-primary);
+}
 
 /* ── BUTTON ── */
 .gameOnBtn {
@@ -228,8 +279,13 @@ body::after {
     font-weight: 700;
 }
 
-.gameOnBtn:active { transform: translateY(1px); }
-.gameOnBtn:hover  { background: var(--accent-warm); }
+.gameOnBtn:active {
+    transform: translateY(1px);
+}
+
+.gameOnBtn:hover {
+    background: var(--accent-warm);
+}
 
 .gameOnBtn.success {
     background: #6aaa70 !important;
@@ -239,7 +295,9 @@ body::after {
 }
 
 /* ── SOCIAL ── */
-.socialLogin { margin-top: 30px; }
+.socialLogin {
+    margin-top: 30px;
+}
 
 .socialDivider {
     font-size: 9px;
@@ -249,16 +307,24 @@ body::after {
     margin: 20px 0;
 }
 
-.socialDivider span { background: #0f1318; padding: 0 10px; }
+.socialDivider span {
+    background: #0f1318;
+    padding: 0 10px;
+}
 
-.socialIcons { display: flex; justify-content: center; gap: 15px; }
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
 
 .socialBtn {
     background: #0a0d12;
     border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 6px;
     color: rgba(138, 155, 176, 0.5);
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -286,11 +352,19 @@ body::after {
     transition: color 0.2s;
 }
 
-.signupLink a:hover { color: var(--accent-warm); }
+.signupLink a:hover {
+    color: var(--accent-warm);
+}
 
-body.transitioning { animation: fadeOut 0.5s forwards; }
+body.transitioning {
+    animation: fadeOut 0.5s forwards;
+}
 
-@keyframes fadeOut { 100% { opacity: 0; } }
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+    }
+}
 
 /* ── TOAST ── */
 .custom-toast {
@@ -314,4 +388,7 @@ body.transitioning { animation: fadeOut 0.5s forwards; }
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.custom-toast.show { bottom: 50px; opacity: 1; }
+.custom-toast.show {
+    bottom: 50px;
+    opacity: 1;
+}
